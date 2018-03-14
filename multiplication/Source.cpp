@@ -1,6 +1,7 @@
 #include "Integer.h"
 #include <assert.h>
 #include <random>
+#include <chrono>
 
 void basic_test_cases()
 {
@@ -409,9 +410,41 @@ void test_multiplications()
 }
 
 
+using namespace std::chrono;
 
 void test_multiplications_time_complexity()
 {
+
+    for (lint step = 1; step < 11; ++step)
+    {
+
+        std::vector<byte> data;
+        for (lint i = 0; i < step * 100; ++i)
+        {
+            data.push_back(255);
+        }
+
+        Integer long_int_a{ data, 1 };
+        Integer long_int_b{ data, -1 };
+
+        Integer out = long_int_a + long_int_b;
+
+        //std::cout << "out: " << out.to_raw_int() << " binary: " << out << " size: " << out.size() << "\n";
+        auto time1 = duration_cast< milliseconds >(
+            system_clock::now().time_since_epoch()
+            ).count();
+
+        out = long_int_a * long_int_b;
+        //std::cout << "out: " << out.to_raw_int() << " binary: " << out << " size: " << out.size() << "\n";
+
+        auto time2 = duration_cast< milliseconds >(
+            system_clock::now().time_since_epoch()
+            ).count();
+
+        std::cout << "============== Time used: " << time2 - time1 << " ===============\n";
+    }
+
+
 }
 
 
@@ -421,13 +454,15 @@ int main()
     //basic_test_cases();
     //constructor_assignment_test_cases();
     //shift_test_cases();
-    sum_sub_test_cases();
+    //sum_sub_test_cases();
     //plus_plus_sub_sub_cases();
     //comparison_cases();
     //test_integer_resize();
 
     //test_initegers_of_different_sizes();
     //test_multiplications();
+
+    test_multiplications_time_complexity();
 
     return 0;
 }

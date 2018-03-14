@@ -743,6 +743,11 @@ Integer & Integer::resize(lint len)
 
 std::ostream & operator << (std::ostream& os, const Integer & itg)
 {
+    if (itg.m_sign < 0)
+    {
+        os << "- ";
+    }
+
     lint len = itg.m_data.size();
     for (lint i = 0; i < len; ++i)
     {
