@@ -34,33 +34,31 @@ for two pairs p = (m; w) and p0 = (m0; w0):
 Solution: **Gale - Shapley algorithm.**
 - Produces pairs in stages, with possible revisions;
 - A man who has not been paired with a woman will be called free.
-- Men will be proposing to women.Women will decide if they accept a
-proposal or not.
+- Men will be proposing to women.Women will decide if they accept a proposal or not.
 - Start with all men free;
 
-While there exists a free man who has not proposed to all women
+        While there exists a free man who has not proposed to all women
 
+            pick such a free man m and have him propose to the highest
+            ranking woman w on his list to whom he has not proposed yet;
 
-    pick such a free man m and have him propose to the highest
-    ranking woman w on his list to whom he has not proposed yet;
-    
-    If no one has proposed to w yet
-    
-        she always accepts and a pair p = (m, w) is formed;
+            If no one has proposed to w yet
 
-    Else
+                she always accepts and a pair p = (m, w) is formed;
 
-        she is already in a pair p0 = (m0, w);
-        If m is higher on her preference list than m0
+            Else
 
-            the pair p0 = (m0, w) is deleted;
-            m0 becomes a free man;
-            a new pair p = (m, w) is formed;
+                she is already in a pair p0 = (m0, w);
+                If m is higher on her preference list than m0
 
-        Else
+                    the pair p0 = (m0, w) is deleted;
+                    m0 becomes a free man;
+                    a new pair p = (m, w) is formed;
 
-            m is lower on her preference list than m0;
-            the proposal is rejected and m remains free.
+                Else
+
+                    m is lower on her preference list than m0;
+                    the proposal is rejected and m remains free.
 
 
 
