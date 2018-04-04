@@ -59,3 +59,8 @@ While there exists a free man who has not proposed to all women
     }
 }
 
+
+## Assignment1
+**Assignment1** is the first homework of this course (COMP9801 or COMP9101, Algorithm design).
+Specification of this homework and my answers are both uploaded here.
+
