@@ -72,5 +72,8 @@ Specification of this homework and my answers are both uploaded here.
 **Assignment2** is the second homework of this course (COMP9801 or COMP9101, Algorithm design).
 Specification of this homework and my answers are both uploaded here.
 
+## Assignment3
+**Assignment3** is the third homework of this course (COMP9801 or COMP9101, Algorithm design).
+Specification of this homework and my answers are both uploaded here.
 
 
